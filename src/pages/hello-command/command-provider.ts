@@ -22,29 +22,26 @@ let decreaseRedLight: Command = new DecreasedRedLightCommand(light);
 
 let remoteControl: RemoteControl = new RemoteControl();
   
-var redLightOn = false;
-  
-export function LightRemoteCommands(command: string) {
+export function LightRemoteCommands(command: string) { 
     
     // Checking which button is pressed
 
     if (command == "on") {
-        remoteControl.execute(turnOnLight);
+        remoteControl.setCommand(turnOnLight);
     } 
     else if (command == "off") {
-        remoteControl.execute(turnOffLight);
+        remoteControl.setCommand(turnOffLight);
     }
 
     else if (command == "set-red-light") {
-        redLightOn = true;
-        remoteControl.execute(setRedLight);
+        remoteControl.setCommand(setRedLight);
     }
 
-    else if (command == "increase" && redLightOn) {
-        remoteControl.execute(increaseRedLight);
+    else if (command == "increase") {
+        remoteControl.setCommand(increaseRedLight);
     }
-    else if (command == "decrease" && redLightOn) {
-        remoteControl.execute(decreaseRedLight);
+    else if (command == "decrease") {
+        remoteControl.setCommand(decreaseRedLight);
     }
 
     return remoteControl.executeCommand();
