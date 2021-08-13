@@ -44,5 +44,5 @@ export function LightRemoteCommands(command: string) {
         remoteControl.setCommand(decreaseRedLight);
     }
 
-    return remoteControl.executeCommand();
+    return remoteControl.followCommand();
 }

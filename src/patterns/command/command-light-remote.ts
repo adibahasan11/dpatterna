@@ -13,10 +13,10 @@ export class Light {
   
   public off(): string {
     this.lightOn = false;
-    this.redLightOn = false; // When light if turned off, we turn the red light off too
+    this.redLightOn = false; // When light is turned off, we turn the red light off too
 
     console.log(`Ligh is turned off`);
-    return "off"; // Returning 'on' to indicate light is on and it will display off.png
+    return "off"; // Returning 'off' to indicate light is off and it will display off.png
   }
   
   public setRedLight(): string {
@@ -34,7 +34,7 @@ export class Light {
   }
   
   public increaseRedLight(): string {
-    // If light is off, red will not set. It will display off.png
+    // If light is off, red light will not set. It will display off.png
     if (this.lightOn == false) {
       return "off"; 
     }
@@ -52,11 +52,11 @@ export class Light {
   }
   
   public decreaseRedLight(): string {
-    // If light is off, red will not set. It will display off.png
+    // If light is off, red light will not set. It will display off.png
     if (this.lightOn == false) {
       return "off"; 
     }
-    // If light is on, but red light is not set, it will not increase.
+    // If light is on, but red light is not set, it will not decrease.
     else if (this.lightOn == true && this.redLightOn == false){
       return "on";
     }
@@ -143,7 +143,7 @@ export class RemoteControl {
     this.command = command; // Which command needs to executed on the reciever.
   }
   
-  public executeCommand(): string {
+  public followCommand(): string {
     return this.command.executeCommand(); // Executes that command.
   }
 }
