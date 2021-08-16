@@ -11,7 +11,7 @@
     red3: "red/3",
   };
 
-  let remoteCommand = "on";
+  let remoteCommand = "off";  //At first light is off
   let src = `./images/light-receiver/${commands[remoteCommand]}.png`;
   
   function remoteButtonClick(command) {

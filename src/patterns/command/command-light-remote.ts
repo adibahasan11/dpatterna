@@ -1,11 +1,12 @@
 // Reciever
 export class Light {
   luminosity: number = 0;
-  lightOn: boolean = true; // As at first by default, light remains on
+  lightOn: boolean = false; // As at first by default, light remains off
   redLightOn: boolean = false; // As at first by default, red light is not set
     
   public on(): string {
     this.lightOn = true;
+    this.redLightOn = false; //Light is being turned on but red light is not being set
     
     console.log(`Ligh is turned on`);
     return "on"; // Returning 'on' to indicate light is on and it will display on.png
